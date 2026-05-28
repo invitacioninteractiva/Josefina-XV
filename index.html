@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Head -->
+    <!-- Required meta tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="invitaciones digitales para eventos">
+
+<!-- Listado de css con version dinamica segun modificacion de archivo -->
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/jquery.fancybox.min.css">
+<link rel="stylesheet" href="./css/styles.css">
+<!-- Font -->
+<link href="./css/css2.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="./css/all.min.css" rel="stylesheet">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+<script>
+
+
+
+	//mostrar mensaje copiado
+		function showSuccessToast() {
+    var x = document.getElementById("snackbar");
+   
+    x.className = "mensaje toast-success show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 2000); // Hide after 3 seconds
+	}
+
+	
+	function copiarAliasPortapapeles() {
+		const alias = "male.bocco.mp";
+
+		navigator.clipboard.writeText(alias).then(() => {
+			showSuccessToast();
+		}).catch(err => {
+			console.error('Error al copiar: ', err);
+		});
+	}
+
+	window.onbeforeunload = function () {
+		setTimeout(function() {
+  		window.scrollTo(0, 0);
+		}, 0);
+	};
+
+	
+	</script>
+
+
+	
+<!-- Title -->
+<title>Malena Bocco Garnero XV</title>
+
+</head>
+<body id="cuerpo" style="overflow-y: hidden">
+    <!-- 1. The <div> where the player will be inserted -->
+    <div id="player" style="display:none;"></div>
+
+    <script>
+        // 2. Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. Define the global function that the API will call.
+        var player; // Declare player globally if needed elsewhere
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '1',
+                width: '1',
+                videoId: 'Oa_RSwwpPaA', // Replace with your video ID
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // 4. Define other functions (like event handlers)
+        function onPlayerReady(event) {
+            //event.target.playVideo();    // Example: start playing automatically
+        }
+
+        function onPlayerStateChange(event) {
+            if(event.data == YT.PlayerState.ENDED){
+                event.target.playVideo();
+            }
+            // Handle state changes (playing, paused, ended, etc.)
+        }
+    </script>
+
+	
+    <!-- Audio -->    
+<section id="icono-audio" class="audio toast-success">
+    <div class="container">
+        <div class="row">
+            <div class="botonAudio-container">
+                <div class="animation">
+                    <img id="btnPlay" src="./img/icono-musica_play.gif" alt="boton play" onclick="playAudio()" class="botonAudioPlay vertical_shake">
+
+                    <img id="btnPausa" src="./img/icono-musica_pausa.png" class="botonAudioPause hidden" onclick="pauseAudio()" alt="boton pausa">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Portada -->
+    <!-- Portada -->
+
+<section class="portada d-flex justify-content-center align-items-center" style="background-image: url(&quot;./img/portada.png&quot;); background-size: cover; background-position: center center;">
+  
+    <!-- Logo central -->
+  <div class="logo-portada fade-in-portada">
+    <img class="" src="./img/logo-portada.png" alt="">
+     <div class=""></div>
+	 <a href="javascript:void(0)" class="ingresar" id="boton-ingresar" >INGRESAR</a>
+	  
+  </div>
+
+</section>
+
+	
+    <!-- Cuenta Regresiva -->
+<section class="cuenta-regresiva" id="cuenta-regresiva" style="height: 360px; margin-top">
+  <div class="container">
+    <!-- Contenedor de cuenta regresiva -->
+  
+
+	<h4>COUNTDOWN</h4>
+    <!-- Contenedor de cuenta regresiva -->
+                <!-- Icono -->
+        <div class="col-md-12 columna" >
+          <img src="./img/icono-timer.svg" alt="" class="bounce-in pulse" data-aos="zoom-out">
+       
+      <p id="reloj" class="descartar" style="margin-top:25px;">"¡Hoy es el gran día!</p>
+			
+	<div class="row justify-content-center margenSup" style="gap: 10px;" id="reloj_number" data-aos="fade-right">
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta bordes-numeros-timer" id="dias">71</p>
+        <p class="text_cuenta">DIAS</p>
+      </div>
+      <p class="num_cuenta"></p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta bordes-numeros-timer" id="horas">34</p>
+        <p class="text_cuenta">HORAS</p>
+      </div>
+      <p class="num_cuenta"></p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta bordes-numeros-timer" id="min">58</p>
+        <p class="text_cuenta">MIN</p>
+      </div>
+      <p class="num_cuenta"></p>
+      <div class="col-md-1 col-2 d-flex flex-column justify-content-center p-0">
+        <p class="num_cuenta bordes-numeros-timer" id="seg">16</p>
+        <p class="text_cuenta">SEG</p>
+      </div>
+    </div>
+	 </div>
+  </div>
+</section>
+
+
+<!-- Ceremonia y Fiesta -->
+<section class="ceremonia-fiesta mb-5">
+  <div class="container" style="justify-content: center; gap: 0px; margin-top: 15px">
+	<div class="row">
+
+              <!-- Icono -->
+        <div class="col-md-12 columna">
+			<h4>DIA y HORA</h4>
+            <img src="./img/icono-calendario.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+			<!-- Texto -->
+			<div class="col-md-12 columna" data-aos="fade-right">
+			Jueves 2 de Abril de 2026<br>
+			21:30 hs. <br>
+			 </div>
+			<div class="col-md-12 columna" style="margin-top:40px" data-aos="flip-left">
+          			<img src="./img/divisor.png">
+   			</div>    
+       	 </div>
+
+              <!-- Icono -->
+        <div class="col-md-12 columna"  style="margin-top:0px">
+		<h4>LUGAR</h4>
+          <img src="./img/icono-lugar.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+		   		<!-- Texto -->
+        	<div class="col-md-12 columna" data-aos="fade-right">
+			Alto Botánico
+			<br>
+			</div>
+			<!-- boton -->
+			<div class="col-md-12 columna divFiesta" data-aos="fade-up">
+          <a target="_blank" href="https://maps.app.goo.gl/6wkDXhPpFqhDDkL98" class="btn">CÓMO LLEGAR</a>
+    		</div> 
+        </div>
+
+    </div>
+  </div>
+</section>
+
+
+	
+
+	<!-- Dress Code -->
+	
+<section class="dresscode" style="background-image: url(&quot;./img/fondo-dresscode.png&quot;); background-size: cover; background-position: center center;">
+
+  <div class="container">
+	<h4>DRESS CODE</h4>
+    <img src="./img/icono-dresscode.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+
+    	   <div class="col-md-12 columna" data-aos="fade-up">
+		   <br><br>
+             <p>Elegante.</p>
+
+        </div>
+    </div>
+</section>
+
+   
+<!-- Confirmar Asistencia -->
+    <section class="confirmar-asistencia">
+
+  <div class="container">
+
+    <h4>CONFIRMACIÓN DE ASISTENCIA</h4>
+
+    <p data-aos="fade-right">Te espero para celebrar juntos!!!<br>
+		<br></p>
+
+    <a target="_blank" href="https://forms.gle/jnu3a71vukSpctL36" class="btn" data-aos="fade-up">Confirmar asistencia</a> 
+
+	<p data-aos="zoom-in">(Importante: Confirmar antes del 18/03)</p>
+  </div>
+</section>
+
+
+    
+
+	
+    <!-- Canciones -->
+    <section class="canciones" style="background-image: url(&quot;./img/portada.jpg&quot;); background-size: cover; background-position: center center;">
+
+  <div class="container">
+ 
+    <div>
+      <h4>¡ARMEMOS JUNTOS LA PLAYLIST!</h4>
+
+		 <img src="./img/icono-playlist.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+			
+      <p style="margin-top: 30px" data-aos="fade-right">Contame que canciones te gustaría escuchar en la fiesta.<BR><br></p>
+		 
+      <a target="_blank" href="https://forms.gle/ojK3xsJQ6Enp1ZMz8" class="btn btn-alt" data-aos="fade-up">Sugerir canciónes</a>
+    </div>
+  </div>
+
+</section>
+
+
+	        <!-- Instagram -->
+<section class="instagram d-flex justify-content-center align-items-center" >
+
+  <div class="contenido">
+
+   <img src="./img/icono-instagram.svg" alt="" class="bounce-in pulse" data-aos="zoom-out">
+
+    <br>
+    <div>
+		<div data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="1500">
+         <span class="hashtag">
+        @maleebocco      </span>
+		</div>
+    <p data-aos="fade-right">¡Seguime en mi cuenta de Instagram!<br></p>
+
+    <a target="_blank" href="https://www.instagram.com/maleebocco" class="btn" data-aos="fade-up">Ver instagram</a>  
+
+ </div>
+  </div>
+</section>
+	
+	
+<!-- CBU -->
+    
+ <section class="cbu">
+
+    <div class="container">
+
+      <img src="./img/icono-regalo.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+      <div>
+        <p style="margin-top: 30px" data-aos="fade-right">Si deseás hacerme un obsequio, aquí puedes encontrar la info.<br>
+		¡Muchas gracias!</p>
+        <a data-fancybox="" data-src="#hidden-cbu" href="javascript:;" data-options="{&quot;touch&quot; : false}" class="btn btn-alt" data-aos="fade-up">Ver Info</a>
+
+        <!-- Datos Cbu -->
+  <div style="display: none;" id="hidden-cbu">
+
+          
+  <div><img src="./img/icono-cuenta-banco.svg" style="display: flex; margin:auto;width:40px;height:40px;"></div>
+<!--   <span class="title">Info de mi Cuenta</span>   -->
+
+<ul>
+  <li>Cuenta Mercado Pago</li>
+  <li><u>Titular</u>: Malena Bocco Garnero</li>
+  <li><u>Alias</u>: male.bocco.mp  <img src="./img/icono-copiar.png" style="margin-left:10px; width:20px;height:20px;cursor:pointer;" title="Copiar alias" alt="copiar alias" onclick="copiarAliasPortapapeles();"></li>
+  <li id="snackbar" class="mensaje toast-success">Copiado!!!</li>
+ </ul> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+	
+
+    <!-- Gracias -->
+    <section class="gracias">
+	
+	<div class="container">
+		<div class="col-md-12 columna">
+			<img src="./img/icono-corazon.png" alt="" class="bounce-in pulse" data-aos="zoom-out">
+		</div>
+      <div class="col-md-12 columna divFiesta" style="margin-top:30px" data-aos="fade-right">
+<p >¡Gracias por acompañarme a celebrar este hermoso momento de mi vida!</p>
+	  </div>
+  </div>
+</section>
+
+
+
+    <!-- Footer -->
+    
+
+<section class="footer">
+
+  <div class="containter">
+	<p> STS <BR>  
+	2026 - Todos los derechos reservados. </p>
+  </div>
+
+</section>
+
+
+
+    <!-- Varaibles para JS desde config -->
+    <script>
+    // Cuenta regresiva
+    var fechaCuentaRegresiva = "04/02/2026 21:30:00";
+   </script>
+
+
+    <!-- Scripts Generales-->
+    <!-- Listado de js con version dinamica segun modificacion de archivo -->
+<script type="text/javascript" src="./js/jquery-3.5.1.slim.min.js"></script>
+	<script type="text/javascript" src="./js/popper.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/parallax.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fancybox.min.js"></script>
+	<script type="text/javascript" src="./js/scripts.js"></script>
+	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init({
+	  duration: 1000 ,	  
+	  once: true
+  });
+</script>
+
+
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpbh-mt'},{'server':'p3plmcpnl504514'},{'dcenter':'p3'},{'cp_id':'3446280'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src="./js/tccl.min.js"></script>
+ 
+</body>
+</html>
