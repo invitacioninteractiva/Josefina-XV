@@ -2,13 +2,14 @@
 
 :root {
 /* --color-primario: #1b1b59;  
-   --color-primario: #F5F0Fa; 
-   --color-primario: #718d72;*/
-   --color-primario: #9b752e;
+   --color-primario: #F5F0Fa;*/ 
+   --color-primario: #718d72;
+
 
  /* --color-secundario: #99752f; 
-    --color-secundario: #76644A;  */
-	--color-secundario: #ddc190;
+    --color-secundario: #76644A;  
+	--color-secundario: #ddc190; */
+	   --color-secundario: #9b752e;
 }
 
 body{
