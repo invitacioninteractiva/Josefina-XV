@@ -73,6 +73,19 @@ h4
 
 }
 
+.btn-alt4{
+  font-family: 'Montserrat', sans-serif;
+  color:white;
+  background-color: var(--color-primario);
+  border: 1px solid white;
+}
+
+.btn-alt4:hover{
+  color: var(--color-primario);
+  background-color: white;
+
+}
+
 .btn:focus{
   box-shadow:none;
 }
